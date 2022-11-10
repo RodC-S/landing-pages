@@ -12,7 +12,7 @@ header {
     height: 700px;
 }
 
-header img {
+#top-header img {
     height: 1.7rem;
 }
 
@@ -22,7 +22,6 @@ header img {
     justify-content: space-between;
     padding: 2.5rem 0;
     margin: 0 2rem;
-    
 }
 
 #menu {
@@ -37,9 +36,11 @@ header img {
     font-family: 'Barlow', sans-serif;
     color: white;
     padding: .5rem;
-
 }
 
+#nav button, .img-mobile{
+    display: none;
+}
 
 #nav li:last-child a {
     border: 1px solid white;
@@ -59,7 +60,7 @@ header img {
     color: white;
 }
 
-h1 {
+#title h1 {
     margin: 4rem 0;
     font-family: 'Fraunces', serif;
     font-size: 3.5rem;
@@ -73,4 +74,106 @@ h1 {
     display: block;
     height: 6.5rem;
     margin: auto;
+}
+
+.row-container {
+    display: flex;
+}
+
+.row-container:first-child {
+    flex-direction: row-reverse;
+}
+
+.img-isolated img{
+    vertical-align: bottom;
+}
+
+#info h2 {
+    font-family: 'Fraunces', serif;
+}
+
+@media (max-width: 375px) {
+    header {
+        background-image: url("images/mobile/image-header.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    #top-header img {
+        height: 1.6rem;
+
+    }
+
+    #title h1 {
+        font-size: 2rem;
+    }
+
+    #nav button {
+        display: block;
+        border: none;
+        background-color: rgba(0, 0, 0, 0);
+        padding: 0;
+    }
+
+    #nav button img {
+        height: 1.2rem;
+    }
+
+    #top-header {
+        position: relative;
+    }
+
+    #menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 7rem;
+        border: 0 solid white;
+        background-color: white;
+        padding: 2rem 0;
+        gap: 2rem;
+        padding: 3rem 0;
+    }
+
+    #menu:before {
+        display: block;
+        content: "";
+        position: absolute;
+        right: 0;
+        top: -20px;
+        border-bottom: 20px solid transparent;
+        border-top: 20px solid transparent;
+        border-right: 20px solid white;
+    }
+
+    #menu a {
+        color: hsl(232, 10%, 55%);
+        font-size: 1.3rem;
+    }
+    
+    #menu li{
+        text-align: center;
+    }
+
+    #nav li:last-child a {
+        background-color: hsl(51, 100%, 49%);
+        padding: 1.2rem 1.9rem;
+        font-size: 1rem;
+        color: hsl(212, 27%, 19%)
+    }
+
+    #nav li:last-child{
+        margin-top: 1rem;
+    }
+
+    #nav li:last-child a:hover {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background-color: rgba(250, 212, 0, 0.3);
+        background-clip: padding-box;
+        color: hsl(212, 27%, 19%);
+    
+    }
+
 }
