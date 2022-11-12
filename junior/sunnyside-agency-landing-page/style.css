@@ -81,34 +81,147 @@ header {
     grid-template-columns: 1fr 1fr;
     grid-auto-flow: dense;
 }
+
 #info div:first-child {
     grid-column: 2;
 }
+
 .img-desktop {
     width: 100%;
-}
-.info-isolated {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 8rem;
-}
-
-.description {
-    font-family: 'Barlow', sans-serif;
-    text-align: justify;
-    color: hsl(213, 9%, 39%);
-}
-
-#info h2 {
-    font-family: 'Fraunces', serif;
-    font-size: 3rem;
-    margin: 0;
 }
 
 .img-isolated img{
     vertical-align: bottom;
+}
+
+.info-isolated, .info-down {
+    padding: 7rem;
+
+
+}
+
+.info-isolated h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 2.5rem;
+    margin: 0;
+    color: hsl(212, 27%, 19%)
+}
+
+.description {
+    font-family: 'Barlow', sans-serif;
+    color: hsl(232, 10%, 55%);
+    padding: 1.5rem 0;
+    line-height: 1.6;
+}
+
+.info-isolated a {
+    position: relative;
+    font-family: 'Fraunces', serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: left;
+    font-size: .9rem;
+    color: hsl(212, 27%, 19%);   
+}
+
+.info-isolated a::before{
+    content: "";
+    position: absolute;
+    left: -6px;
+    right: -6px;
+    top: 12px;
+    border-bottom: 6px rgba(250, 212, 0, .3) solid;
+}
+
+.info-isolated:nth-child(4) a::before{
+    border-bottom: 6px rgba(250, 0, 0, 0.3) solid;
+}
+
+.column-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.info-down {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 250px;
+    color: rgba(35, 48, 62, .8);
+}
+
+.info-down h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    margin: 0;
+    text-align: center;
+    color: rgba(35, 48, 62, .8)
+}
+
+.description-down {
+    margin: 2rem 2.5rem;
+    font-family: 'Barlow', sans-serif;
+    color: rgba(35, 48, 62, .7);
+    font-size: 1rem;
+    text-align: center;
+}
+
+#client-testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8rem 6rem 8rem 6rem;
+}
+
+#client-testimonials div {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+#client-testimonials h2 {
+    font-family: 'Fraunces', serif;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-size: 18px;
+    color: hsl(210, 4%, 67%);
+    margin: 0 0 60px 0;
+}
+
+#client-testimonials img {
+    border-radius: 75px;
+    width: 60px;
+    align-self: center;
+    margin: 0 0 30px 0;
+}
+
+#client-testimonials article p:nth-of-type(1){
+    font-size: 1rem;
+    font-family: 'Barlow', sans-serif;
+    text-align: center;
+    color: rgba(35, 48, 62, .7);
+}
+
+#client-testimonials article p:nth-of-type(2){
+    font-size: 1rem;
+    font-family: 'Fraunces', serif;
+    text-align: center;
+    margin: 40px 0 5px 0;
+    color: hsl(212, 27%, 19%);
+}
+#client-testimonials article p:nth-of-type(3){
+    font-family: 'Barlow', sans-serif;
+    font-size: .75rem;
+    text-align: center;
+    color: rgba(129, 132, 152, .85);
+}
+
+#client-testimonials article{
+    display: flex;
+    flex-direction: column;
+    margin: 0 4rem;
 }
 
 @media (max-width: 375px) {
@@ -120,7 +233,6 @@ header {
 
     #top-header img {
         height: 1.6rem;
-
     }
 
     #title h1 {
