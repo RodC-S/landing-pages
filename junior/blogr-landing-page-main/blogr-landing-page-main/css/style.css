@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap');
 
 /* RESET */
-html, body {
+html, body, div, p {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -35,11 +35,14 @@ ul {
 --very-dark-desaturated-blue: hsl(237, 23%, 32%);
 }
 
-/* HEADER */
+/* -----HEADER----- */
 header {
-    background-image: linear-gradient(var(--very-light-red), var(--light-red));
+    background-image: url(/images/bg-pattern-intro-mobile.svg), linear-gradient(var(--very-light-red), var(--light-red));
+    background-position-x: -350px, center;
+    background-position-y: -250px, center;
     max-width: 100%;
-    min-width: 215px;
+    min-width: 375px;
+    border-bottom-left-radius: 100px;
 }
 
 header .top-header {
@@ -68,7 +71,7 @@ header .cover-page {
 
 }
 
-header .cover-page h1, header .cover-page p{
+header .cover-page h1, header .cover-page p {
     color: var(--white);
     font-family: 'Overpass', sans-serif;
     text-align: center;
@@ -85,11 +88,11 @@ header .cover-page p {
 }
 
 header .cover-page .btn-container {
-display: flex;
-justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 }
 
-header .cover-page .btn-container .start-btn{
+header .cover-page .btn-container .start-btn {
     border: 1px solid var(--white);
     border-radius: 50px;
     padding: 10px 20px;
@@ -99,10 +102,9 @@ header .cover-page .btn-container .start-btn{
     font-size: 1.6rem;
     color: var(--light-red);
     background-color: var(--white) ;
-
 }
 
-header .cover-page .btn-container .learn-btn{
+header .cover-page .btn-container .learn-btn {
     border: 1px solid var(--white);
     border-radius: 50px;
     padding: 10px 20px;
@@ -112,5 +114,76 @@ header .cover-page .btn-container .learn-btn{
     font-size: 1.6rem;
     color: var(--white);
     background-color: transparent;
+}
 
+/* -----END OF HEADER----- */
+
+/* -----MAIN SECTION-----  */
+main .section-company {
+    min-width: 375px;
+    text-align: center;
+}
+
+main .section-company h2 {
+    padding-top: 108px;
+    padding-bottom: 52px;
+}
+main .section-company .img-container img {
+    max-width: 100%;
+}
+
+main .section-company .card-container dt,
+main .section-company h2 {
+    margin: 0 80px;
+    font-size: 2.5rem;
+    font-family: 'Overpass', sans-serif;    
+    font-weight: 600;
+    color: var(--very-dark-gray-blue);
+}
+
+main .section-company .card-container dd {
+    margin: 33px 38px;
+    font-size: 1.6rem;
+    font-family: 'Overpass', sans-serif;    
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--very-dark-grayish-blue);
+}
+
+main .section-company .flex-card-img {
+    margin-bottom: 278px;
+}
+
+/* MIDDLE BLACK CARD */
+main .section-company .card-container.middle {
+    background-image: url(/images/bg-pattern-circles.svg), linear-gradient(var(--very-dark-gray-blue),var(--very-dark-desaturated-blue));
+    background-position-x: calc(50%), center;
+    background-position-y: calc(50% - 250px), center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-bottom-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+
+main .section-company .card-container.middle .img-container {
+    position: absolute;
+    top: -183px;
+    width: 375px;
+    left: calc(50% - 187.5px);
+    padding: 0;
+}
+
+main .section-company .card-container.middle .card-down {
+    padding: 230px 0 110px 0;
+}
+
+main .section-company .card-container.middle dt {
+    color: var(--white);
+    font-size: 4rem;
+    margin: 0;
+}
+
+main .section-company .card-container.middle dd {
+    color: var(--white);
 }
