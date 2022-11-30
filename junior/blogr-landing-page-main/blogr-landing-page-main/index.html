@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | [Blogr]</title>
-
+  <link rel="stylesheet" href="css/style.css">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -17,12 +17,10 @@
 <body>
   <header>
     <div class="top-header">
-      <a href="index.html">
-        <img src="images/logo.svg" alt="logo of blogr" class="logo">
-      </a>
-      <button class="menu-button">
-        <img src="images/icon-hamburger.svg" alt="" >
-      </button>
+      <div class="top-header-container">
+        <a href="index.html"><img src="images/logo.svg" alt="logo of blogr" class="logo"></a>
+        <button class="menu-button"><img src="images/icon-hamburger.svg" alt="menu button"></button>
+      </div>
       <nav class="main-nav">
         <ul class="menu-container">
           <li><a href="index.html">Product</a></li>
@@ -106,36 +104,37 @@
           </dl>
         </div>
     </section>
-
-    <footer>
-      <img src="images/logo.svg" alt="logo of blogr" class="logo">
-      <nav class="main-nav">
-        <ul>
-          <li><a href="index.html">Product</a></li>
-            <ul class="product-menu submenu">
-              <li><a href="index.html">Overview</a></li>
-              <li><a href="index.html">Pricing</a></li>
-              <li><a href="index.html">Marketplace</a></li>
-              <li><a href="index.html">Features</a></li>
-              <li><a href="index.html">Integrations</a></li>
-            </ul> 
-          <li><a href="index.html">Company</a></li>
-            <ul class="company-menu submenu">
-              <li><a href="index.html">About</a></li>
-              <li><a href="index.html">Team</a></li>
-              <li><a href="index.html">Blog</a></li>
-              <li><a href="index.html">Careers</a></li>
-            </ul>
-          <li><a href="index.html">Connect</a></li>
-            <ul class="connect-menu submenu">
-              <li><a href="index.html">Contact</a></li>
-              <li><a href="index.html">Newsletter</a></li>
-              <li><a href="index.html">LinkedIn</a></li>
-            </ul>
-        </ul>
-      </nav>
-    </footer>
   </main>
+  
+  <footer>
+    <img src="images/logo.svg" alt="logo of blogr" class="logo">
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Product</a></li>
+          <ul class="product-menu submenu">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="index.html">Pricing</a></li>
+            <li><a href="index.html">Marketplace</a></li>
+            <li><a href="index.html">Features</a></li>
+            <li><a href="index.html">Integrations</a></li>
+          </ul> 
+        <li><a href="index.html">Company</a></li>
+          <ul class="company-menu submenu">
+            <li><a href="index.html">About</a></li>
+            <li><a href="index.html">Team</a></li>
+            <li><a href="index.html">Blog</a></li>
+            <li><a href="index.html">Careers</a></li>
+          </ul>
+        <li><a href="index.html">Connect</a></li>
+          <ul class="connect-menu submenu">
+            <li><a href="index.html">Contact</a></li>
+            <li><a href="index.html">Newsletter</a></li>
+            <li><a href="index.html">LinkedIn</a></li>
+          </ul>
+      </ul>
+    </nav>
+  </footer>
+ 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
