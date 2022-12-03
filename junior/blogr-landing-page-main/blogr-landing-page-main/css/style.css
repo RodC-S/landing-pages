@@ -38,15 +38,16 @@ ul {
 /* -----HEADER----- */
 header {
     background-image: url(/images/bg-pattern-intro-mobile.svg), linear-gradient(var(--very-light-red), var(--light-red));
-    background-position-x: -350px, center;
-    background-position-y: -250px, center;
+    background-position-x: -35rem, center;
+    background-position-y: -25rem, center;
+    border-bottom-left-radius: 10rem;
     max-width: 100%;
-    min-width: 375px;
-    border-bottom-left-radius: 100px;
+    min-width: 37.5rem;
+    position: relative;
 }
 
 header .top-header {
-    display: flex;
+    position: relative;
 }
 
 header .top-header .top-header-container {
@@ -54,21 +55,187 @@ header .top-header .top-header-container {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 56px 24px 0 24px;
+    padding: 5.6rem 2.4rem 0 2.4rem;
 }
 
-header .top-header .top-header-container button {
-    background: none;
+    @media screen and (min-width: 900px) {
+        header .top-header .top-header-container {
+            padding: 6.3rem 15.6rem 0 15.6rem;
+            
+        } 
+    }
+
+/* MENU */
+header .top-header .top-header-container .menu-button {
+    background-image: url(/images/icon-hamburger.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
     border: none;
+    padding: 1rem 1.7rem;
+    cursor: pointer;
+}
+
+    @media screen and (min-width: 900px) {
+        header .top-header .top-header-container .menu-button {
+            display: none;
+        }
+    }
+
+header .top-header .top-header-container .menu-button.active {
+    background-image: url(/images/icon-close.svg);
+    padding: 1.5rem;
 }
 
 header .top-header .main-nav {
-    display: none;
+    position: absolute;
+    background-color: var(--white);
+    max-width: 100%;
+    text-align: center;
+    top: 13rem;
+    left: 2.5rem;
+    right: 2.5rem;
+    padding: 2.5rem 2.5rem;
+    border-radius: 1rem;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: .1s ease-in-out;
 }
 
-header .cover-page {
-    padding: 113px 42px 155px 42px;
+    @media screen and (min-width: 900px) {
+        header .top-header .main-nav {
+            transform: scale(1);
+            padding: 6.3rem 15.6rem 6.3rem 6rem;
+            top: 0;
+            left: 25.6rem;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            background-color: transparent;
+        }
+    }
 
+header .top-header .main-nav.active {
+    transform:scale(1);
+
+}
+
+header .top-header .main-nav .menu-container,
+header .top-header .main-nav .login-area  {
+    padding: 0;
+}
+
+@media screen and (min-width: 900px) {
+    header .top-header .main-nav .menu-container,
+    header .top-header .main-nav .login-area{
+        display: flex;
+        margin: 0;
+        gap: 2rem;
+    }
+
+    header .top-header .main-nav .menu-container {
+        justify-content: space-between;
+    }
+}
+
+header .top-header .main-nav .menu-container > li,
+header .top-header .main-nav .login-area li {
+    padding: 1.2rem 0;
+}
+
+header .top-header .main-nav .menu-container > li a, 
+header .top-header .main-nav .login-area li a {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: var(--very-dark-gray-blue);
+    text-decoration: none;
+}
+
+@media screen and (min-width: 900px) {
+    header .top-header .main-nav .menu-container > li a,
+    header .top-header .main-nav .login-area li a{
+        color: var(--white);
+        opacity: .8;
+    }
+}
+
+header .top-header .main-nav .menu-container > li a::after {
+    content: url(/images/icon-arrow-dark.svg);
+    margin: 0 1rem;
+    display: inline-block;
+    transition: .3s ease-in-out;
+}
+
+@media screen and (min-width: 900px) {
+    header .top-header .main-nav .menu-container > li a::after {
+        content: url(/images/icon-arrow-light.svg);
+    }
+}
+
+header .top-header .main-nav .menu-container > li.active a::after {
+    display: inline-block;
+    transform: rotate(180deg);
+    transition: .3s ease-in-out;
+}
+
+header .top-header .main-nav .menu-container .submenu {
+    position: absolute;
+    opacity: 0;
+    padding: 1rem 0;
+    background-color: hsla(240, 2%, 79%, 40%);
+    border-radius: 10px;
+
+}
+
+header .top-header .main-nav .menu-container > li.active + .submenu {
+    position: static;
+    transition: ease-in .3s;
+    opacity: 0.8;
+
+}
+
+header .top-header .main-nav .menu-container .submenu a {
+    font-family: 'Overpass', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--very-dark-grayish-blue);
+    text-decoration: none;
+}
+
+header .top-header .main-nav .menu-container .submenu li {
+    padding: 1rem;
+}
+
+header .top-header .main-nav hr {
+    opacity: 0.3;
+}
+
+    @media screen and (min-width: 900px) {
+        header .top-header .main-nav hr {
+            display: none;
+        }
+    }
+
+header .top-header .main-nav .login-area .signup-btn {
+    color: var(--white);
+    border-radius: 40px;
+    background-image: linear-gradient(to right, var(--very-light-red), var(--light-red));
+    padding: 1rem 10%;
+}
+
+@media screen and (min-width: 900px) {
+    header .top-header .main-nav .login-area .signup-btn {
+        background-color: var(--white);
+        opacity: 1;
+        background-image: none;
+        color: var(--light-red);
+        padding: 1.5rem 3.5rem;
+    }
+}
+
+/* BANNER */
+header .cover-page {
+    padding: 11.3rem 4.2rem 15.5rem 4.2rem;
 }
 
 header .cover-page h1, header .cover-page p {
@@ -82,67 +249,131 @@ header .cover-page h1 {
     font-weight: 600;
 }
 
+    @media screen and (min-width: 900px) {
+        header .cover-page h1 {
+            font-size: 6.1rem;
+            margin-bottom: 1rem;
+        }
+    }
+
 header .cover-page p {
     font-size: 1.7rem;
     font-weight: 300;
 }
 
+    @media screen and (min-width: 900px) {
+        header .cover-page p {
+            font-size: 2.1rem;
+            opacity: .8;
+        }
+    }
+
 header .cover-page .btn-container {
     display: flex;
-    justify-content: space-around;
+    gap: 2rem;
+    justify-content: center;
 }
 
 header .cover-page .btn-container .start-btn {
     border: 1px solid var(--white);
-    border-radius: 50px;
-    padding: 10px 20px;
-    margin-top: 51px;
+    border-radius: 5rem;
+    padding: 1rem 2rem;
+    margin-top: 5.1rem;
     font-family: 'Overpass', sans-serif;
     font-weight: 600;
     font-size: 1.6rem;
     color: var(--light-red);
     background-color: var(--white) ;
+    cursor: pointer; 
 }
 
 header .cover-page .btn-container .learn-btn {
     border: 1px solid var(--white);
-    border-radius: 50px;
-    padding: 10px 20px;
-    margin-top: 51px;
+    border-radius: 5rem;
+    padding: 1rem 2rem;
+    margin-top: 5.1rem;
     font-family: 'Overpass', sans-serif;
     font-weight: 600;
     font-size: 1.6rem;
     color: var(--white);
     background-color: transparent;
+    cursor: pointer; 
 }
 
 /* -----END OF HEADER----- */
 
 /* -----MAIN SECTION-----  */
 main .section-company {
-    min-width: 375px;
+    min-width: 37.5rem;
     text-align: center;
 }
 
+    @media screen and (min-width: 900px) {
+        main .section-company .main-title-cards {
+            background-image: url(/images/illustration-editor-desktop.svg);
+            background-position: center;
+            background-position-x: calc(80% + 35rem);
+            background-repeat: no-repeat;
+        }
+    }
+
 main .section-company h2 {
-    padding-top: 108px;
-    padding-bottom: 52px;
-}
-main .section-company .img-container img {
-    max-width: 100%;
+    padding-top: 10.8rem;
 }
 
 main .section-company .card-container dt,
 main .section-company h2 {
-    margin: 0 80px;
     font-size: 2.5rem;
     font-family: 'Overpass', sans-serif;    
     font-weight: 600;
     color: var(--very-dark-gray-blue);
 }
 
+    @media screen and (min-width: 900px) {
+        main .section-company h2 {
+            padding-top: 16rem;
+            padding-bottom: 12rem;
+            font-size: 3.8rem;
+        }
+
+        main .section-company .flex-card-img.top .card-container.white-card {
+            padding: 0 73.6rem 0 16.6rem;
+            text-align: left;
+        }
+    }
+
+main .section-company .flex-card-img.bottom .card-container.white-card {
+padding-bottom: 5rem;
+}
+
+    @media screen and (min-width: 900px) {
+        main .section-company .flex-card-img.bottom .card-container.white-card {
+            background-image: url(/images/illustration-laptop-desktop.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-position-x: -28rem;
+            padding: 31rem 18rem 31rem 72rem;
+            text-align: left;
+        }
+    }
+
+main .section-company .img-container img {
+    max-width: 100%;
+}
+
+main .section-company .flex-card-img.top {
+    padding-bottom: 27.8rem;
+}
+
+    @media screen and (min-width: 900px) {
+        main .section-company .flex-card-img .img-container.white-card {
+            display: none;
+        }
+    }
+
+
 main .section-company .card-container dd {
-    margin: 33px 38px;
+    margin: 3.3rem 3.8rem;
     font-size: 1.6rem;
     font-family: 'Overpass', sans-serif;    
     font-weight: 300;
@@ -150,33 +381,49 @@ main .section-company .card-container dd {
     color: var(--very-dark-grayish-blue);
 }
 
-main .section-company .flex-card-img {
-    margin-bottom: 278px;
-}
+    @media screen and (min-width: 900px) {
+        main .section-company .card-container dd {
+            margin: 3.3rem 0;
+        }
+    }
 
-/* MIDDLE BLACK CARD */
+/* -----MIDDLE BLACK CARD----- */
 main .section-company .card-container.middle {
     background-image: url(/images/bg-pattern-circles.svg), linear-gradient(var(--very-dark-gray-blue),var(--very-dark-desaturated-blue));
     background-position-x: calc(50%), center;
-    background-position-y: calc(50% - 250px), center;
+    background-position-y: calc(50% - 25rem), center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    border-bottom-left-radius: 100px;
-    border-top-right-radius: 100px;
+    border-bottom-left-radius: 10rem;
+    border-top-right-radius: 10rem;
 }
 
 main .section-company .card-container.middle .img-container {
     position: absolute;
-    top: -183px;
-    width: 375px;
-    left: calc(50% - 187.5px);
+    top: -18.3rem;
+    width: 37.5rem;
+    left: calc(50% - 18.75rem);
     padding: 0;
 }
 
+    @media screen and (min-width: 900px) {
+        main .section-company .card-container.middle .img-container {
+            width: auto;
+            left: calc(5% + 5rem);
+            top: -6rem;
+        }
+    }
+
 main .section-company .card-container.middle .card-down {
-    padding: 230px 0 110px 0;
+    padding: 23rem 0 11rem 0;
 }
+
+    @media screen and (min-width: 900px) {
+        main .section-company .card-container.middle .card-down {
+            padding: 12rem 17rem 12rem calc(6.5% + 60rem);
+        }
+    }
 
 main .section-company .card-container.middle dt {
     color: var(--white);
@@ -184,6 +431,71 @@ main .section-company .card-container.middle dt {
     margin: 0;
 }
 
+    @media screen and (min-width: 900px) {
+        main .section-company .card-container.middle dt {
+            font-size: 3.5rem;
+            text-align: left;
+        }
+    }
+
 main .section-company .card-container.middle dd {
     color: var(--white);
+}
+
+    @media screen and (min-width: 900px) {
+        main .section-company .card-container.middle dd {
+            text-align: left;
+            color: var(--grayish-blue);
+        }
+    }
+
+/* ----- END OF MAIN SECTION ----- /*
+
+/* ----- FOOTER ----- */
+footer {
+    background-color: var(--very-dark-black-blue);
+    padding: 7.5rem 0;
+    text-align: center;
+    border-top-right-radius: 13rem;
+}
+
+footer .logo {
+    padding-bottom: 7.5rem;
+}
+
+footer .footer-nav > ul {
+    padding: 0;
+}
+
+footer .footer-nav > ul > li a {
+    font-size: 1.6rem;
+    font-family: 'Overpass', sans-serif;    
+    font-weight: 600;
+    color: var(--white);
+    text-decoration: none;
+}
+
+footer .footer-nav .submenu {
+    margin: 3rem 0 3rem 0;
+    padding: 0;
+}
+
+footer .footer-nav .submenu:last-child {
+    margin-bottom: 0;
+}
+
+footer .footer-nav .submenu li{
+    padding-bottom: 1rem;
+}
+
+footer .footer-nav .submenu li a {
+    font-size: 1.6rem;
+    font-family: 'Overpass', sans-serif;    
+    font-weight: 300;
+    color: var(--grayish-blue);
+    text-decoration: none;
+}
+
+footer .footer-nav .submenu li a:hover {
+    text-decoration: underline;
 }
