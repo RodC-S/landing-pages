@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
 
 /* RESET */
+* {
+    margin: 0;
+    padding: 0;
+ }
+
 html, body, div, p {
     margin: 0;
     padding: 0;
@@ -36,7 +41,7 @@ body {
 }
 
 /* TYPOGRAPHY */
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h6 {
     font-family: var(--Bellefair);
     font-weight: 400;
     color: var(--white);
@@ -131,6 +136,10 @@ p {
     }
 
 /* ----- BACKGROUND ----- */
+body {
+    position: relative;
+}
+    /* Homepage */
 body.main-page {
     background-image: url(/assets/home/background-home-mobile.jpg);
     background-size: cover;
@@ -149,6 +158,27 @@ body.main-page {
             background-image: url(/assets/home/background-home-desktop.jpg);   
         }
     }
+
+    /* Destination */
+    body.dest-page {
+        background-image: url(/assets/destination/background-destination-mobile.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;  
+        background-color: var(--grayish-blue);
+    }
+    
+        @media screen and (min-width: 768px) {
+            body.dest-page {
+                background-image: url(/assets/destination/background-destination-tablet.jpg);   
+            }
+        }
+    
+        @media screen and (min-width: 1440px) {
+            body.dest-page {
+                background-image: url(/assets/destination/background-destination-desktop.jpg);   
+            }
+        }
+
 /* ----- END OF BACKGROUND ----- */
 
 /* ----- HEADER ----- */
@@ -254,7 +284,6 @@ header .nav-bar ul{
         header .nav-bar ul{
             margin-top: 0;
             display: flex;
-            align-content: center;
             justify-content: space-around;
             gap: 3.9rem;
         }
@@ -331,7 +360,7 @@ main {
     text-align: center;
 }
 
-/* Homepage */
+    /* Homepage */
 main.home-section {
     padding: 3rem 3rem 0 3rem;
 }
@@ -363,7 +392,8 @@ main.home-section section h1 {
 }
 
 main.home-section button.explore-btn {
-    margin-top: 9rem;
+    margin-top: 10rem;
+    margin-bottom: 4.8rem;
     padding: 7rem 3.4rem;
     border: none;
     border-radius: 20rem;
@@ -398,4 +428,9 @@ main.home-section button.explore-btn {
         }
     }
 
+    /* Destination */
+main.dest-section > section:not(.active) {
+display: none;
+}
 
+/* ----- END OF MAIN SECTION ----- */
