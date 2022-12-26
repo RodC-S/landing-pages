@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap');
+
 
 /* RESET */
 * {
@@ -36,8 +37,9 @@ body {
     --light-blue: rgb(208, 214, 249);
     --white: rgb(255, 255, 255);
 /* Font */
-    --Barlow: 'Barlow Condensed', sans-serif;
+    --Barlow-Condensed: 'Barlow Condensed', sans-serif;
     --Bellefair: 'Bellefair', serif;
+    --Barlow: 'Barlow', sans-serif;
 }
 
 /* TYPOGRAPHY */
@@ -66,16 +68,18 @@ h6 {
 }
 
 h5 {
-    font-family: var(--Barlow);
+    font-family: var(--Barlow-Condensed);
     font-size: 1.6rem;
     letter-spacing: 2.7px;
     text-transform: uppercase;
     color: var(--light-blue);
+    font-weight: 400;
 }
 
 p {
     font-family: var(--Barlow);
     font-size: 1.5rem;
+    line-height: 2.5rem;
     font-weight: 400;
     color: var(--light-blue);
 }
@@ -104,6 +108,7 @@ p {
         
         p {
             font-size: 1.6rem;
+            line-height: 2.8rem;
         }
     }
 
@@ -242,6 +247,7 @@ header button {
     }
 
 header .nav-bar {
+    max-width: 100%;
     transform: scale(0);
     background-color: rgba(255, 255, 255, .05);
     backdrop-filter: blur(2rem);
@@ -259,14 +265,14 @@ header .nav-bar {
 
     @media screen and (min-width: 768px) {
         header .nav-bar {
-            padding: 3.5rem 4.9rem;
+            padding: 3.5rem 4.6rem;
             transform: scale(1);
             position: relative;
             left: 0;
         }
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1440px) {
         header .nav-bar {
             padding: 3.5rem 16.8rem 3.5rem 12.4rem;
         }
@@ -285,7 +291,8 @@ header .nav-bar ul{
             margin-top: 0;
             display: flex;
             justify-content: space-around;
-            gap: 3.9rem;
+            gap: 3.5rem;
+            text-align: center;
         }
     }
 
@@ -328,13 +335,27 @@ header .nav-bar ul li.active{
     }
 
 header .nav-bar ul a {
-    font-family: var(--Barlow);
+    font-family: var(--Barlow-Condensed);
     text-transform: uppercase;
     font-weight: 400;
-    letter-spacing: 2.7px;
     font-size: 1.6rem;
+    letter-spacing: 2.7px;
     text-decoration: none;
     color: var(--white);
+}
+
+@media screen and (min-width: 768px) {
+    header .nav-bar ul a {
+        font-size: 1.4rem;
+        letter-spacing: 2.3625px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    header .nav-bar ul a {
+        font-size: 1.6rem;
+        letter-spacing: 2.7px;
+    }
 }
 
 header .nav-bar ul a span {
@@ -430,7 +451,187 @@ main.home-section button.explore-btn {
 
     /* Destination */
 main.dest-section > section:not(.active) {
-display: none;
+    display: none;
 }
 
+    @media screen and (min-width: 768px) {
+
+        main.dest-section section h5 {
+            text-align: left;
+            margin-top: 4rem;
+            margin-left: 4rem;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        main.dest-section section {
+            text-align: left;
+        }
+    }
+
+main.dest-section section h5 span{
+    font-weight: 700;
+    color: var(--white);
+    opacity: 0.25;
+    padding-right: 1rem;
+}
+
+main.dest-section section .img-cont {
+    margin: auto;
+    margin-top: 3.5rem;
+    width: 17rem;
+    height: 17rem;
+}
+
+    @media screen and (min-width: 768px) {
+        main.dest-section section .img-cont {
+            margin-top: 6rem;
+            width: 30rem;
+            height: 30rem;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        main.dest-section section .img-cont {
+            margin-top: 6rem;
+            width: 44.5rem;
+            height: 44.5rem;
+        }
+    }
+
+main.dest-section section .flex-cont {
+    margin-bottom: 6.5rem;
+}
+
+    @media screen and (min-width: 1440px) {
+        main.dest-section section .flex-cont {
+            display: flex;
+            justify-content: center;
+            padding: 9rem 17.1rem 2.1rem 22.6rem;
+            gap: 14.5rem;
+        }
+    }
+
+
+main.dest-section section .flex-cont .img-cont img{
+    max-width: 100%;
+}
+
+    @media screen and (min-width: 1440px) {
+        main.dest-section section .flex-cont .info-cont{
+            max-width: 44.5rem;
+            max-height: 47.2rem;
+        }
+    }
+
+main.dest-section section .flex-cont .info-cont .dest-nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem auto;
+    max-width: 25rem;
+}
+
+    @media screen and (min-width: 768px) {
+        main.dest-section section .flex-cont .info-cont .dest-nav {
+            margin: 5.8rem auto 4.6rem auto;
+            max-width: 30rem;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        main.dest-section section .flex-cont .info-cont .dest-nav {
+            margin: 0 16rem 5rem 0;
+        }
+    }
+
+main.dest-section section .flex-cont .info-cont .dest-nav li {
+    color: var(--light-blue);
+    font-family: var(--Barlow-Condensed);
+    font-size: 1.4rem;
+    letter-spacing: 2.3625px;
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+    @media screen and (min-width: 768px) {
+        main.dest-section section .flex-cont .info-cont .dest-nav li {
+            font-size: 1.6rem;
+            letter-spacing: 2.7px;
+        }
+    }
+
+main.dest-section section .flex-cont .info-cont .dest-nav li.active{
+    color: white;
+    padding-bottom: 1rem;
+    border-bottom: 4px solid var(--white);
+}
+
+main.dest-section section .flex-cont .info-cont > p {
+    margin: 0 2.4rem;
+}
+
+    @media screen and (min-width: 768px) {
+        main.dest-section section .flex-cont .info-cont > p {
+            margin: 1rem 9.7rem;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        main.dest-section section .flex-cont .info-cont > p {
+            margin: 1rem 0;
+        }
+    }
+
+main.dest-section section .flex-cont .info-cont hr {
+    margin: 3.6rem 2.4rem 3.6rem 2.4rem;
+    color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+    @media screen and (min-width: 768px) {
+        main.dest-section section .flex-cont .info-cont hr {
+            margin: 5.6rem 9.6rem 3.2rem 9.6rem;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        main.dest-section section .flex-cont .info-cont hr {
+            margin: 6.1rem 0 3rem 0;
+        }
+    }
+
+main.dest-section section .flex-cont .info-cont .data-cont div p {
+    font-size: 14px;
+    letter-spacing: 2.3625px;
+    text-transform: uppercase;
+    font-family: var(--Barlow-Condensed);
+    margin-bottom: 1rem;
+}
+
+    @media screen and (min-width: 768px) {
+        main.dest-section section .flex-cont .info-cont .data-cont {
+            display: flex;
+            justify-content: center;
+            gap: 9.5rem;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        main.dest-section section .flex-cont .info-cont .data-cont {
+            justify-content: left;
+            gap: 9.5rem;
+        }
+    }
+
+main.dest-section section .flex-cont .info-cont .data-cont div.data-travel-time {
+    margin-top: 3.5rem;
+}
+
+    @media screen and (min-width: 768px) {
+        main.dest-section section .flex-cont .info-cont .data-cont div.data-travel-time {
+            margin-top: 0;
+        }
+    }
 /* ----- END OF MAIN SECTION ----- */
